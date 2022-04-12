@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- res_partner form view inherited for add field days_to_deliver-->
+    <record id="view_partner_property_form_inherit" model="ir.ui.view">
+        <field name="name">view.partner.property.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="product.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_product_pricelist']" position="after">
+                <field name="days_to_deliver"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

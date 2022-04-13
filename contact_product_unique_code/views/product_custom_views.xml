@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- product category form inherit -->
+	<record id="product_category_form_view_inherit_new" model="ir.ui.view">
+        <field name="name">product.category.form.view.inherit.new</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="stock.product_category_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='removal_strategy_id']" position="after">
+                <field name="assign_sequence"/>                
+            </xpath>
+            <xpath expr="//field[@name='assign_sequence']" position="after">
+                <field name="sequence_new" attrs="{'invisible': [('assign_sequence' ,'=', False)] , 'required':[('assign_sequence','=',True)] } "> </field>               
+            </xpath>
+        </field>
+    </record>
+
+</odoo> 

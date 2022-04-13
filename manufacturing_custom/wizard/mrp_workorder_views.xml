@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+
+        <record id="action_start" model="ir.actions.server">
+            <field name="name">Start Timer</field>
+            <field name="model_id" ref="model_mrp_workorder"/>
+            <field name="binding_model_id" ref="model_mrp_workorder"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                for record in records:
+                    record.button_start()
+            </field>
+        </record> 
+
+        <record id="action_stop" model="ir.actions.server">
+            <field name="name">Stop Timer</field>
+            <field name="model_id" ref="model_mrp_workorder"/>
+            <field name="binding_model_id" ref="model_mrp_workorder"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                for record in records:
+                    record.button_finish()
+            </field>
+        </record> 
+
+        <record id="action_done" model="ir.actions.server">
+            <field name="name">Done</field>
+            <field name="model_id" ref="model_mrp_workorder"/>
+            <field name="binding_model_id" ref="model_mrp_workorder"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                for record in records:
+                    record.button_done()
+            </field>
+        </record> 
+
+    </data>
+</odoo>

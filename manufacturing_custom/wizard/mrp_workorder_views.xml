@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
     <data>
-
-
         <record id="action_start" model="ir.actions.server">
             <field name="name">Start Timer</field>
             <field name="model_id" ref="model_mrp_workorder"/>
@@ -38,6 +36,5 @@
                     record.button_done()
             </field>
         </record> 
-
     </data>
 </odoo>
